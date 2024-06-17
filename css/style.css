@@ -5,8 +5,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
-  font-weight: 200;
 }
 
 :root {
@@ -14,43 +12,117 @@
   --cyan: hsl(180, 62%, 55%);
   --orange: hsl(34, 86%, 64%);
   --blue: hsl(212, 86%, 64%);
-  --very-dark-blue: (234, 12%, 34%);
+  --very-dark-blue: hsl(234, 12%, 34%);
   --grayish-blue: hsl(229, 6%, 66%);
-  --very-light-gray: hsl(0, 0%, 98%);
+  --very-light-gray: hsl(0, 0%, 96%);
 }
 
+section {
+  display: flex;
+  flex-direction:column;
+}
+span {
+  font-weight: 400;
+  color: var(--grayish-blue);
+  padding-block: 0.5rem;
+  font-size: 0.88rem;
 
+}
+
+h1, h2 {
+  color: var(--very-dark-blue);
+  font-size:1.25rem;
+}
+
+img {
+  display: flex;
+  align-self: flex-end;
+  flex-basis: 2.5rem;
+  justify-content: flex-end;
+  padding-top: 1.5rem;
+}
 .title {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding:20px;
+  padding:1.25rem;
+  text-align: center;
 }
 
 .title h1, h2{
-  font-size:20px;
+  font-size: 1.38rem;
 }
 
-.tile h1 {
-  font-weight: 600;
+.title h2 {
+  font-weight: 200;
 
 }
 
-.container {
+.title span {
+  padding: 1.25rem;
+  max-width: 35rem;
+}
+.upper-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-container {
   display: flex;
   flex-direction: column;
-  margin: 20px;
-  padding: 20px ;
-  border-top: 1px solid var(--cyan);
+  flex-wrap: nowrap;
+}
+.block {
+  display: flex;
+  flex-direction: column;
+  max-width: 21rem;
+  margin: 1rem;
+  padding: 1.5rem ;
   border-radius: 5px;
-  box-shadow: 10px 10px 10px 10px var(--very-light-gray);
+  box-shadow: 0 10px 10px 10px var(--very-light-gray);
 }
 
-.container img {
-  display: flex;
-  align-self: flex-end;
-  width: 20%;
-  padding-top: 30px;
+.upper-container .block:nth-child(1){
+  border-top: 5px solid var(--cyan);
 }
+
+.inner-container .block:nth-child(1){
+  border-top: 5px solid var(--red);
+}
+
+.inner-container .block:nth-child(2){
+  border-top: 5px solid var(--orange);
+}
+
+.upper-container .block:nth-child(3){
+  border-top: 5px solid var(--blue);
+}
+
+@media screen and (max-width: 1215px) {
+  .upper-container {
+    display:flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1215px) {
+  .block {
+    padding:2rem;
+    max-width: 22rem;
+    height: 15rem;   
+  }
+
+  .title h1, .title h2{
+    font-size: 1.88rem;
+  }
+
+  .title span {
+    font-size: 1rem;
+  }
+}
+
+
 
